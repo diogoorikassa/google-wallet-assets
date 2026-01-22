@@ -25,10 +25,10 @@ const payload = {
         id: `${ISSUER_ID}.objeto_teste_${Date.now()}`, // ID único para este cartão específico
         classId: CLASS_ID,
         logo: {
-          sourceUri: { uri: 'https://raw.githubusercontent.com/diogoorikassa/google-wallet-assets/main/assets/wallet-logo-topo.png' }
+          sourceUri: { uri: `https://raw.githubusercontent.com/diogoorikassa/google-wallet-assets/main/assets/wallet-logo-topo.png?t=${Date.now()}` }
         },
         heroImage: {
-          sourceUri: { uri: 'https://raw.githubusercontent.com/diogoorikassa/google-wallet-assets/main/assets/wallet-heroImage.png' },
+          sourceUri: { uri: `https://raw.githubusercontent.com/diogoorikassa/google-wallet-assets/main/assets/wallet-heroImage.png?t=${Date.now()}` },
           contentDescription: {
             defaultValue: { language: 'pt-BR', value: 'Imagem de destaque do cartão' }
           }
@@ -42,6 +42,23 @@ const payload = {
         header: {
           defaultValue: { language: 'pt-BR', value: 'Rayssa Oliveira Bezerra' }
         },
+        textModulesData: [
+          {
+            header: 'CPF',
+            body: '123.456.789-01',
+            id: 'cpf'
+          },
+          {
+            header: 'Código da carteirinha',
+            body: '0YXY2034227008',
+            id: 'card_code'
+          },
+          {
+            header: 'Plano',
+            body: 'PREMIUM 900.1 CE APT COP',
+            id: 'plan'
+          }
+        ],
         hexBackgroundColor: '#1539AA' // Azul
       }
     ]
