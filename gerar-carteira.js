@@ -25,10 +25,10 @@ const payload = {
         id: `${ISSUER_ID}.objeto_teste_${Date.now()}`, // ID único para este cartão específico
         classId: CLASS_ID,
         logo: {
-          sourceUri: { uri: 'https://cdn-icons-png.flaticon.com/512/2966/2966327.png' }
+          sourceUri: { uri: 'https://raw.githubusercontent.com/diogoorikassa/google-wallet-assets/main/assets/wallet-logo-topo.png' }
         },
         heroImage: {
-          sourceUri: { uri: 'https://images.unsplash.com/photo-1557683316-973673baf926?q=80&w=1032&auto=format&fit=crop' },
+          sourceUri: { uri: 'https://raw.githubusercontent.com/diogoorikassa/google-wallet-assets/main/assets/wallet-heroImage.png' },
           contentDescription: {
             defaultValue: { language: 'pt-BR', value: 'Imagem de destaque do cartão' }
           }
