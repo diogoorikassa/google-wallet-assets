@@ -9,7 +9,7 @@ const CREDENTIALS_FILE = './credentials.json';
 const ISSUER_ID = '3388000000023072852';
 
 // CORREÇÃO AQUI: O Class ID precisa ter o prefixo do Emissor + ponto
-const CLASS_ID = `${ISSUER_ID}.health_card_v1`;
+const CLASS_ID = `${ISSUER_ID}.health_card_v2`;
 // --------------------
 const credentials = require(CREDENTIALS_FILE);
 
@@ -20,6 +20,28 @@ const payload = {
   iat: Math.floor(Date.now() / 1000),
   origins: [],
   payload: {
+    genericClasses: [
+      {
+        id: CLASS_ID,
+        classTemplateInfo: {
+          cardTemplateOverride: {
+            cardRowTemplateInfos: [
+              {
+                twoItems: {
+                  startItem: { firstValue: { fields: [{ fieldPath: "object.textModulesData['cpf']" }] } },
+                  endItem: { firstValue: { fields: [{ fieldPath: "object.textModulesData['card_code']" }] } }
+                }
+              },
+              {
+                oneItem: {
+                  item: { firstValue: { fields: [{ fieldPath: "object.textModulesData['plan']" }] } }
+                }
+              }
+            ]
+          }
+        }
+      }
+    ],
     genericObjects: [
       {
         id: `${ISSUER_ID}.objeto_teste_${Date.now()}`, // ID único para este cartão específico
