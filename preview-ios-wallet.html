@@ -93,14 +93,32 @@
             /* Foreground Color */
         }
 
-        .secondary-field .field-value {
-            font-size: 20px;
-            /* Slightly larger for secondary */
+        .primary-field .field-value {
+            font-size: 24px;
+            /* Larger for Primary */
+            font-weight: 300;
+            /* Apple often uses lighter weight for big primary text, or standard. Let's keep it clean. */
+        }
+
+        .secondary-row {
+            display: flex;
+            gap: 20px;
+            /* Space between columns */
+        }
+
+        .secondary-row .field .field-value {
+            font-size: 16px;
+            /* Secondary Size */
         }
 
         .auxiliary-row {
             display: flex;
             gap: 20px;
+        }
+
+        .auxiliary-row .field .field-value {
+            font-size: 14px;
+            /* Auxiliary is usually smaller */
         }
 
         .barcode-container {
@@ -152,31 +170,28 @@
 
         <!-- Fields -->
         <div class="pass-content">
-            <!-- Secondary Fields (Beneficiary) -->
+            <!-- Primary Fields (Beneficiary) -->
             <div class="field-row">
-                <div class="field secondary-field">
+                <div class="field primary-field">
                     <span class="field-label">Beneficiário</span>
                     <span class="field-value">Rayssa Oliveira Bezerra</span>
                 </div>
             </div>
 
-            <!-- Auxiliary Fields -->
-            <div class="field-row auxiliary-row">
+            <!-- Secondary Fields (CPF, Code) -->
+            <div class="field-row secondary-row">
                 <div class="field">
                     <span class="field-label">CPF</span>
                     <span class="field-value">123.456.789-01</span>
                 </div>
                 <div class="field">
-                    <span class="field-label">Código</span>
+                    <span class="field-label">Código da carteirinha</span>
                     <span class="field-value">0YXY2034227008</span>
                 </div>
-                <!-- <div class="field">
-                    <span class="field-label">Plano</span>
-                    <span class="field-value">PREMIUM 900.1 CE APT COP</span>
-                </div> -->
-                <!-- The plan value is quite long, might wrap or need adjustment. Standard pass layout flows horizontally. -->
             </div>
-            <div class="field-row">
+
+            <!-- Auxiliary Fields (Plano) -->
+            <div class="field-row auxiliary-row">
                 <div class="field">
                     <span class="field-label">Plano</span>
                     <span class="field-value">PREMIUM 900.1 CE APT COP</span>

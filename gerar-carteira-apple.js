@@ -12,47 +12,44 @@ if (!fs.existsSync(OUTPUT_DIR)) {
 
 // 1. Define pass.json Structure
 const pass = {
-    formatVersion: 1,
-    passTypeIdentifier: "pass.com.hapvida.wallet", // Placeholder - needs real cert to sign
-    serialNumber: "1234567890",
-    teamIdentifier: "TEAMID123", // Placeholder
-    organizationName: "Hapvida",
-    description: "Carteirinha Hapvida",
-    foregroundColor: "rgb(255, 255, 255)",
-    backgroundColor: "rgb(21, 57, 170)", // #1539AA
-    labelColor: "rgb(255, 255, 255)",
-    storeCard: {
-        // Strip image is the hero
-        secondaryFields: [
+    "formatVersion": 1,
+    "passTypeIdentifier": "pass.com.wallet.hapvida",
+    "serialNumber": "1234567890",
+    "teamIdentifier": "242MY65552",
+    "organizationName": "Hapvida",
+    "description": "Carteirinha Hapvida",
+    "foregroundColor": "rgb(255, 255, 255)",
+    "backgroundColor": "rgb(21, 57, 170)",
+    "labelColor": "rgb(255, 255, 255)",
+    "storeCard": {
+        "primaryFields": [
             {
-                key: "beneficiary",
-                label: "Beneficiário",
-                value: "Rayssa Oliveira Bezerra"
+                "key": "beneficiary",
+                "label": "Beneficiário",
+                "value": "Rayssa Oliveira Bezerra"
             }
         ],
-        auxiliaryFields: [
+        "secondaryFields": [
             {
-                key: "cpf",
-                label: "CPF",
-                value: "123.456.789-01"
+                "key": "cpf",
+                "label": "CPF",
+                "value": "123.456.789-01"
             },
             {
-                key: "code",
-                label: "Código",
-                value: "0YXY2034227008"
-            },
+                "key": "code",
+                "label": "Código da carteirinha",
+                "value": "0YXY2034227008"
+            }
+        ],
+        "auxiliaryFields": [
             {
-                key: "plan",
-                label: "Plano",
-                value: "PREMIUM 900.1 CE APT COP"
+                "key": "plan",
+                "label": "Plano",
+                "value": "PREMIUM 900.1 CE APT COP"
             }
         ]
     },
-    barcode: {
-        message: "0YXY2034227008",
-        format: "PKBarcodeFormatQR",
-        messageEncoding: "iso-8859-1"
-    }
+
 };
 
 // 2. Write pass.json
