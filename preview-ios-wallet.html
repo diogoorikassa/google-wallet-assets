@@ -65,10 +65,25 @@
             padding: 15px;
         }
 
+        /* Field Row Layouts */
         .field-row {
             display: flex;
-            justify-content: space-between;
+            width: 100%;
             margin-bottom: 20px;
+        }
+
+        .primary-row {
+            justify-content: flex-start;
+        }
+
+        .secondary-row {
+            justify-content: space-between;
+            /* 2 items: Left & Right */
+        }
+
+        .auxiliary-row {
+            justify-content: flex-start;
+            /* 1 item: Left */
         }
 
         .field {
@@ -76,49 +91,53 @@
             flex-direction: column;
         }
 
+        /* Alignment Logic for rows with multiple items */
+        .secondary-row .field:first-child {
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        .secondary-row .field:last-child {
+            align-items: flex-end;
+            text-align: right;
+        }
+
+        /* Fonts & Colors */
         .field-label {
-            font-size: 11px;
+            font-size: 10px;
+            /* Standard Apple Label Size */
             text-transform: uppercase;
-            opacity: 0.8;
+            color: rgba(255, 255, 255, 0.8);
+            /* Standard Label Opacity */
             margin-bottom: 2px;
             font-weight: 600;
-            color: rgb(255, 255, 255);
-            /* Label Color */
+            letter-spacing: 0.5px;
         }
 
         .field-value {
-            font-size: 16px;
-            font-weight: 500;
             color: rgb(255, 255, 255);
-            /* Foreground Color */
+            font-weight: 400;
+            /* Apple uses standard weights mostly, bold for emphasis */
+            line-height: 1.2;
         }
 
+        /* Specific Field Sizes */
         .primary-field .field-value {
-            font-size: 24px;
-            /* Larger for Primary */
+            font-size: 28px;
+            /* Primary is prominent */
             font-weight: 300;
-            /* Apple often uses lighter weight for big primary text, or standard. Let's keep it clean. */
         }
 
-        .secondary-row {
-            display: flex;
-            gap: 20px;
-            /* Space between columns */
-        }
-
-        .secondary-row .field .field-value {
-            font-size: 16px;
+        .secondary-field .field-value,
+        .secondary-row .field-value {
+            font-size: 14px;
             /* Secondary Size */
         }
 
-        .auxiliary-row {
-            display: flex;
-            gap: 20px;
-        }
-
-        .auxiliary-row .field .field-value {
+        .auxiliary-field .field-value,
+        .auxiliary-row .field-value {
             font-size: 14px;
-            /* Auxiliary is usually smaller */
+            /* Auxiliary Size */
         }
 
         .barcode-container {
