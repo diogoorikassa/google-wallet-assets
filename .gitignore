@@ -2,3 +2,8 @@ node_modules/
 *.json
 !package.json
 !package-lock.json
+
+# Build Artifacts
+carteira.pass/
+*.zip
+.DS_Store
